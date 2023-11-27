@@ -16,12 +16,12 @@ var newsDataArr = [];
 // apis 
 const API_KEY = "";
 const HEADLINES_NEWS = "https://gnews.io/api/v4/top-headlines?country=in&token=493c64a1276b6cf50012f9756cdd10a8&lang=en";
-const GENERAL_NEWS = "https://gnews.io/api/v4/top-headlines?country=in&token=493c64a1276b6cf50012f9756cdd10a8&lang=en";
-const BUSINESS_NEWS = "https://gnews.io/api/v4/top-headlines?country=in&token=493c64a1276b6cf50012f9756cdd10a8&lang=en";
-const SPORTS_NEWS = "https://gnews.io/api/v4/top-headlines?country=in&token=493c64a1276b6cf50012f9756cdd10a8&lang=en";
-const ENTERTAINMENT_NEWS = "https://gnews.io/api/v4/top-headlines?country=in&token=493c64a1276b6cf50012f9756cdd10a8&lang=en";
-const TECHNOLOGY_NEWS = "https://gnews.io/api/v4/top-headlines?country=in&token=493c64a1276b6cf50012f9756cdd10a8&lang=en";
-const SEARCH_NEWS = "https://gnews.io/api/v4/top-headlines?country=in&token=493c64a1276b6cf50012f9756cdd10a8&lang=en";
+const GENERAL_NEWS = "https://gnews.io/api/v4/search?q=general&lang=en&country=in&max=10&apikey=493c64a1276b6cf50012f9756cdd10a8";
+const BUSINESS_NEWS = "https://gnews.io/api/v4/search?q=business&lang=en&country=in&max=10&apikey=493c64a1276b6cf50012f9756cdd10a8";
+const SPORTS_NEWS = "https://gnews.io/api/v4/search?q=Sports&lang=en&country=in&max=10&apikey=493c64a1276b6cf50012f9756cdd10a8";
+const ENTERTAINMENT_NEWS = "https://gnews.io/api/v4/search?q=entertainment&lang=en&country=in&max=10&apikey=493c64a1276b6cf50012f9756cdd10a8";
+const TECHNOLOGY_NEWS = "https://gnews.io/api/v4/search?q=Technology&lang=en&country=in&max=10&apikey=493c64a1276b6cf50012f9756cdd10a8";
+const SEARCH_NEWS = "https://gnews.io/api/v4/search?q=";
 
 window.onload = function() {
     newsType.innerHTML="<h4>Headlines</h4>";
@@ -162,7 +162,7 @@ const fetchQueryNews = async () => {
     if(newsQuery.value == null)
         return;
 
-    const response = await fetch(SEARCH_NEWS+encodeURIComponent(newsQuery.value)+"&apiKey="+API_KEY);
+    const response = await fetch(SEARCH_NEWS+encodeURIComponent(newsQuery.value)+"&lang=en&country=in&max=10&apikey=493c64a1276b6cf50012f9756cdd10a8"+API_KEY);
     newsDataArr = [];
     if(response.status >= 200 && response.status < 300) {
         const myJson = await response.json();
