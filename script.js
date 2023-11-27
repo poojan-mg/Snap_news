@@ -14,14 +14,14 @@ const newsdetails = document.getElementById("newsdetails");
 var newsDataArr = [];
 
 // apis 
-const API_KEY = "c61542c5183444c492335f06bc80cc58";
-const HEADLINES_NEWS = "https://newsapi.org/v2/top-headlines?country=in&apiKey=";
-const GENERAL_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=";
-const BUSINESS_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=";
-const SPORTS_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=";
-const ENTERTAINMENT_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=";
-const TECHNOLOGY_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=technology&pageSize=8&apiKey=";
-const SEARCH_NEWS = "https://newsapi.org/v2/everything?q=";
+const API_KEY = "";
+const HEADLINES_NEWS = "https://gnews.io/api/v4/top-headlines?country=in&token=493c64a1276b6cf50012f9756cdd10a8&lang=en";
+const GENERAL_NEWS = "https://gnews.io/api/v4/top-headlines?country=in&token=493c64a1276b6cf50012f9756cdd10a8&lang=en";
+const BUSINESS_NEWS = "https://gnews.io/api/v4/top-headlines?country=in&token=493c64a1276b6cf50012f9756cdd10a8&lang=en";
+const SPORTS_NEWS = "https://gnews.io/api/v4/top-headlines?country=in&token=493c64a1276b6cf50012f9756cdd10a8&lang=en";
+const ENTERTAINMENT_NEWS = "https://gnews.io/api/v4/top-headlines?country=in&token=493c64a1276b6cf50012f9756cdd10a8&lang=en";
+const TECHNOLOGY_NEWS = "https://gnews.io/api/v4/top-headlines?country=in&token=493c64a1276b6cf50012f9756cdd10a8&lang=en";
+const SEARCH_NEWS = "https://gnews.io/api/v4/top-headlines?country=in&token=493c64a1276b6cf50012f9756cdd10a8&lang=en";
 
 window.onload = function() {
     newsType.innerHTML="<h4>Headlines</h4>";
@@ -199,7 +199,7 @@ function displayNews() {
         var image = document.createElement('img');
         image.setAttribute("height","matchparent");
         image.setAttribute("width","100%");
-        image.src=news.urlToImage;
+        image.src=news.image;
 
         var cardBody = document.createElement('div');
         
